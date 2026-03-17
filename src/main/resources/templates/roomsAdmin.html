@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Rooms</title>
+</head>
+
+<body>
+
+<h2>All Rooms</h2>
+
+<ul>
+<li th:each="room : ${rooms}" th:text="${room}"></li>
+</ul>
+
+<a href="/admin">Back</a>
+
+</body>
+</html>

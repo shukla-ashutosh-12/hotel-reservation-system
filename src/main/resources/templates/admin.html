@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Admin Panel</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+}
+
+.container{
+width:500px;
+margin:auto;
+background:white;
+padding:30px;
+margin-top:60px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+button{
+width:250px;
+padding:12px;
+margin:10px;
+font-size:16px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+a{
+display:block;
+margin-top:20px;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Admin Panel</h1>
+<h3>Dashboard Statistics</h3>
+
+<p>Total Customers: <span th:text="${totalCustomers}"></span></p>
+<p>Total Rooms: <span th:text="${totalRooms}"></span></p>
+<p>Total Reservations: <span th:text="${totalReservations}"></span></p>
+<p>Available Rooms: <span th:text="${availableRooms}"></span></p>
+<hr>
+<form action="/admin/customers">
+<button type="submit">See All Customers</button>
+</form>
+
+<form action="/admin/rooms">
+<button type="submit">See All Rooms</button>
+</form>
+
+<form action="/admin/reservations">
+<button type="submit">See All Reservations</button>
+</form>
+
+<form action="/admin/addRoom">
+<button type="submit">Add a Room</button>
+</form>
+
+<a href="/">⬅ Back to Home</a>
+
+</div>
+
+</body>
+
+</html>

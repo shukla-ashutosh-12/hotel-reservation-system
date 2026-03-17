@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Add Room</title>
+</head>
+
+<body>
+
+<h2>Add Room</h2>
+<p th:if="${success}" style="color:green;" th:text="${success}"></p>
+<p th:if="${error}" style="color:red;" th:text="${error}"></p>
+
+<form action="/admin/addRoom" method="post">
+
+Room Number: <input type="text" name="roomNumber"><br><br>
+
+Price: <input type="number" name="price"><br><br>
+
+Room Type:
+
+<select name="roomType">
+<option value="SINGLE">Single</option>
+<option value="DOUBLE">Double</option>
+</select>
+
+<br><br>
+
+<button type="submit">Add Room</button>
+
+</form>
+
+<a href="/admin">Back</a>
+
+</body>
+</html>

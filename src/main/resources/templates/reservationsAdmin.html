@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Reservations</title>
+</head>
+
+<body>
+
+<h2>All Reservations</h2>
+<p th:if="${success}" style="color:green;" th:text="${success}"></p>
+<p th:if="${error}" style="color:red;" th:text="${error}"></p>
+<table border="1">
+
+<tr>
+<th>Customer</th>
+<th>Room</th>
+<th>Check In</th>
+<th>Check Out</th>
+</tr>
+
+<tr th:each="res : ${reservations}">
+
+<td th:text="${res.customer.email}"></td>
+<td th:text="${res.room.roomNumber}"></td>
+<td th:text="${res.checkInDate}"></td>
+<td th:text="${res.checkOutDate}"></td>
+
+<td>
+<a th:href="@{/admin/deleteReservation(id=${res.id})}">Delete</a>
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<a href="/admin">Back</a>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Customers</title>
+</head>
+
+<body>
+
+<h2>All Customers</h2>
+
+<p th:if="${error}" style="color:red;" th:text="${error}"></p>
+<p th:if="${success}" style="color:green;" th:text="${success}"></p>
+
+<h3>Search Customer</h3>
+
+<form action="/admin/searchCustomer" method="get">
+<input type="text" name="email" placeholder="Enter customer email">
+<button type="submit">Search</button>
+</form>
+
+<br>
+
+<table border="1">
+
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Actions</th>
+</tr>
+
+<tr th:each="c : ${customers}">
+
+<td th:text="${c.firstName}"></td>
+<td th:text="${c.lastName}"></td>
+<td th:text="${c.email}"></td>
+
+<td>
+
+<a th:href="@{/admin/editCustomer(email=${c.email})}">
+Edit
+</a>
+
+|
+
+<a th:href="@{/admin/deleteCustomer(email=${c.email})}"
+onclick="return confirm('Are you sure you want to delete this customer?')">
+Delete
+</a>
+
+</td>
+</tr>
+
+</table>
+
+<br>
+
+<a href="/admin">Back</a>
+
+</body>
+</html>

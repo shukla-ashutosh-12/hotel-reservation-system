@@ -1,0 +1,18 @@
+<h2>Find a Room</h2>
+
+<p th:if="${success}" style="color:green;" th:text="${success}"></p>
+<p th:if="${error}" style="color:red;" th:text="${error}"></p>
+
+<form action="/searchRooms" method="post">
+
+Check-In Date
+<input type="date" name="checkIn" required>
+
+Check-Out Date
+<input type="date" name="checkOut" required>
+
+<button type="submit">Search</button>
+
+</form>
+
+<a href="/">Back</a>

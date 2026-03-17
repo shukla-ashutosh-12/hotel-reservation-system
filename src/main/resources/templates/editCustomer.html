@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Edit Customer</title>
+</head>
+
+<body>
+
+<h2>Update Customer</h2>
+
+<form action="/admin/updateCustomer" method="post">
+
+<input type="hidden" name="email" th:value="${customer.email}">
+
+First Name:
+<input type="text" name="firstName" th:value="${customer.firstName}">
+<br><br>
+
+Last Name:
+<input type="text" name="lastName" th:value="${customer.lastName}">
+<br><br>
+
+<button type="submit">Update</button>
+
+</form>
+
+<br>
+
+<a href="/admin/customers">Back</a>
+
+</body>
+</html>

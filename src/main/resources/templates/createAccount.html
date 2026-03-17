@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Create Account</title>
+</head>
+
+<body>
+
+<h2>Create Account</h2>
+
+<p th:if="${error}" style="color:red;" th:text="${error}"></p>
+<p th:if="${success}" style="color:green;" th:text="${success}"></p>
+
+<form action="/createCustomer" method="post">
+
+Email:
+<input type="email" name="email" required>
+<br><br>
+
+First Name:
+<input type="text" name="firstName">
+
+<br><br>
+
+Last Name:
+<input type="text" name="lastName">
+
+<br><br>
+
+<button type="submit">Create Account</button>
+
+</form>
+
+<a href="/">Back</a>
+
+</body>
+</html>

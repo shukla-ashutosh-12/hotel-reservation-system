@@ -1,0 +1,38 @@
+<h2>Available Rooms</h2>
+
+<table border="1">
+
+<tr>
+<th>Room</th>
+<th>Price</th>
+<th>Type</th>
+<th>Book</th>
+</tr>
+
+<tr th:each="room : ${rooms}">
+
+<td th:text="${room.roomNumber}"></td>
+<td th:text="${room.roomPrice}"></td>
+<td th:text="${room.roomType}"></td>
+
+<td>
+
+<form action="/bookRoom" method="post">
+
+<input type="hidden" name="roomNumber" th:value="${room.roomNumber}">
+<input type="hidden" name="checkIn" th:value="${checkIn}">
+<input type="hidden" name="checkOut" th:value="${checkOut}">
+
+Email <input type="text" name="email" required>
+
+<button type="submit">Book</button>
+
+</form>
+
+</td>
+
+</tr>
+
+</table>
+
+<a href="/">Back</a>
